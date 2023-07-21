@@ -1,0 +1,346 @@
+﻿@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Add Branch", "CreateBranch", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+@RenderBody()
+<hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Phozogy Template">
+    <meta name="keywords" content="Phozogy, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Photo Studio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/Content/phozogy-master/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/phozogy-master/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/phozogy-master/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/phozogy-master/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/phozogy-master/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/phozogy-master/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/phozogy-master/css/style.css" type="text/css">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <style>
+        .nav-menu ul li .dropdown {
+            background: #ebebeb !important;
+            width: 225px !important;
+        }
+        .nav-menu ul li .longd {
+            background: #ebebeb !important;
+            width: 260px !important;
+        }
+
+
+            .nav-menu ul li .dropdown li a {
+                color: #000000 !important;
+            }
+
+        .font-25{
+            font-size:20px;
+        }
+        .grid-padding{
+            padding-left:25px;
+            padding-right:25px;
+        }
+        .pb-10 {
+            padding-bottom: !important
+        }
+
+
+        .hs-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        }
+
+        .hs-text p{
+            font-size:18px !important;
+        }
+        .login-nav-btn> a{
+            background: #009603;
+            color: #fff !important;
+            padding: 15px 30px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="logo">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="~/Content/phozogy-master/img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <nav class="nav-menu mobile-menu">
+                        <ul>
+
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+
+
+                            <li>
+                                <a href="#">Administrator &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                <ul class="dropdown">
+                                    <li>@Html.ActionLink("Add New Branch", "CreateBranch", "Home")</li>
+                                    <li>@Html.ActionLink("Add New User Account", "AddUser", "Home")</li>
+                                    <li>@Html.ActionLink("Add New Charge", "CreateChargeType", "Home")</li>
+                                    <li>@Html.ActionLink("Edit Branch", "ViewBranch", "Home")</li>
+                                    <li>@Html.ActionLink("Edit User Account", "ViewUser", "Home")</li>
+                                    <li>@Html.ActionLink("Edit Charge", "ViewChargeType", "Home")</li>
+                                </ul>
+                            </li>
+
+
+                            @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                            <!--<li>
+        <a href="#">Branch &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        <ul class="dropdown">
+            <li>@Html.ActionLink("Add New Branch", "CreateBranch", "Home")</li>
+            <li>@Html.ActionLink("Modify Branch", "ViewBranch", "Home")</li>
+        </ul>
+    </li>-->
+                            @*<li>@Html.ActionLink("Add Branch", "CreateBranch", "Home")</li>*@
+                            @*<li>@Html.ActionLink("Modify Branch", "ViewBranch", "Home")</li>*@
+
+                            <!--<li>
+        <a href="#">User Account &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        <ul class="dropdown">
+            <li>@Html.ActionLink("Create New User Account", "AddUser", "Home")</li>
+            <li>@Html.ActionLink("Manage User Account", "ViewUser", "Home")</li>
+        </ul>
+    </li>-->
+
+
+                            <li>
+                                <a href="#">Custore Registration &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                <ul class="dropdown">
+                                    <li>@Html.ActionLink("Create New Custore", "CreateAccount", "Home")</li>
+                                    <li>@Html.ActionLink("Manage Custore Account", "CreateAccount", "Home")</li>
+                                </ul>
+                            </li>
+
+
+                            @*<li>
+            <a href="#">Charge Type &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+            <ul class="dropdown">
+                <li>@Html.ActionLink("Add New Charge", "CreateChargeType", "Home")</li>
+                <li>@Html.ActionLink("Mofify Charge", "ViewChargeType", "Home")</li>
+            </ul>
+        </li>*@
+
+                            <li>
+                                <a href="#">Reservation &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                <ul class="dropdown">
+                                    <li>@Html.ActionLink("Make Reservation", "Login", "Home")</li>
+                                    <li>@Html.ActionLink("View Reservation ", "Login", "Home")</li>
+                                    <li>@Html.ActionLink("View Reservation ", "Login", "Home")</li>
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <a href="#">Reports &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                <ul class="dropdown longd">
+                                    <li>@Html.ActionLink("Customer details Report", "Login", "Home")</li>
+                                    <li>@Html.ActionLink("User Details report", "Login", "Home")</li>
+                                    <li>@Html.ActionLink("Branch Details report", "Login", "Home")</li>
+                                    <li>@Html.ActionLink("Charge Type Details reporth", "Login", "Home")</li>
+                                    <li>@Html.ActionLink("Reservation Details Report", "Login", "Home")</li>
+                                    <li>@Html.ActionLink("Payments Details Report", "Login", "Home")</li>
+                                </ul>
+                            </li>
+
+
+                            <li class="login-nav-btn">@Html.ActionLink("Login", "Login", "Home")</li>
+
+                            @*<li class="active"><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./pricing.html">Pricing</a></li>
+        <li><a href="./portfolio.html">Portfolio</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li>
+            <a href="#">Pages</a>
+            <ul class="dropdown">
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./portfolio-details.html">Portfolio Details</a></li>
+                <li><a href="./blog-details.html">Blog Details</a></li>
+            </ul>
+        </li>
+        <li><a href="./contact.html">Contact</a></li>*@
+                        </ul>
+                    </nav>
+                    @*<div class="top-search search-switch">
+                            Sign in
+                        </div>*@
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+    @RenderBody()
+
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-6 col-sm-6">
+                    <div class="fs-about">
+                        <div class="fa-logo">
+                            <a href="#">
+                                <img src="~/Content/phozogy-master/img/f-logo.png" alt="" style="filter: brightness(0) invert(1);">
+                            </a>
+                        </div>
+                        <p>
+                            Turning Ordinary Moments into Extraordinary Memories. Where Creativity Meets Vision: Crafting Timeless Stories Through the Lens of a Professional Photographer
+                        </p>
+                        <div class="fa-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Instagram</h5>
+                        <div class="fw-instagram">
+                            <img src="img/instagram/insta-1.jpg" alt="">
+                            <img src="img/instagram/insta-2.jpg" alt="">
+                            <img src="img/instagram/insta-3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>*@
+                @*<div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Quick links</h5>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Services</a></li>
+                        </ul>
+                    </div>
+                </div>*@
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Subscribe</h5>
+                        <p>Please subscribe to Stay connected by joining us..</p>
+                        <div class="fw-subscribe">
+                            <form action="#">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 p-0">
+                    <div class="copyright-text m-0 p-0">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved 
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+    <!-- Js Plugins -->
+    <script src="~/Content/phozogy-master/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/phozogy-master/js/bootstrap.min.js"></script>
+    <script src="~/Content/phozogy-master/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/phozogy-master/js/isotope.pkgd.min.js"></script>
+    <!-- <script src="js/masonry.pkgd.min.js"></script> -->
+    <script src="~/Content/phozogy-master/js/jquery.slicknav.js"></script>
+    <script src="~/Content/phozogy-master/js/owl.carousel.min.js"></script>
+    <script src="~/Content/phozogy-master/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

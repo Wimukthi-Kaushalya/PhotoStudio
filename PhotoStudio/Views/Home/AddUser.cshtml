@@ -1,0 +1,149 @@
+﻿@model PhotoStudio.Models.User
+
+@{
+    ViewBag.Title = "AddUser";
+}
+
+
+
+
+@using (Html.BeginForm("AddUser", "Home"))
+{
+    @Html.AntiForgeryToken()
+<div class="col-md-12 col-sm-12 header-line mb-5 header-line text-center bgimage pb-5" style="min-height:70vh ">
+    <div class="col-sm-12  col-md-12 mt-3 mb-4">
+        <h2>Add New User</h2>
+    </div>
+    <div class="col-md-6 col-sm-12 row mb-5 form-background" style="text-align: -webkit-left">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="col-md-12 col-sm-12 row">
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                First Name
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control col-md-12 p-0" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                Last Name
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control col-md-12 p-0" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.DOB, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                Join Date
+                @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", type = "date" } })
+                @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                Address
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control col-md-12 p-0" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.ContactNum, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                Contact No.
+                @Html.EditorFor(model => model.ContactNum, new { htmlAttributes = new { @class = "form-control col-md-12 p-0" } })
+                @Html.ValidationMessageFor(model => model.ContactNum, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                Email
+                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control col-md-12 p-0" } })
+                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                Password
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", type = "password", id = "passwordInput" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                Confirm Password
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", type = "password", id = "confirmPasswordInput" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.UserType, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                User Type
+                @Html.EditorFor(model => model.UserType, new { htmlAttributes = new { @class = "form-control col-md-12 p-0" } })
+                @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 col-sm-12">
+                @*@Html.LabelFor(model => model.BrachID, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                Branch
+                @Html.EditorFor(model => model.BrachID, new { htmlAttributes = new { @class = "form-control col-md-12 p-0" } })
+                @Html.ValidationMessageFor(model => model.BrachID, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12">
+                <div class="p-o">
+                    <button type="submit" class="btn btn-success col-12 font-25">Create User</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(document).ready(function () {
+        debugger
+        $('#passwordInput').on('focus input', function () {
+                debugger
+                var passwordValue = $('#passwordInput').val();
+                var confirmPasswordValue = $('#confirmPasswordInput').val();
+
+                if (passwordValue == confirmPasswordValue) {
+                    alert('g')
+                }
+                else {
+                    alert('a')
+                }
+            }
+    });
+
+   
+</script>
+
+<style>
+    .custom-password-input {
+  width: 100%;
+  padding: 0;
+  /* Add any other styles you want */
+}
+
+    .bgimage {
+        background-image: url('../../Images/login-bg.png');
+        background-size: cover;
+    }
+</style>

@@ -1,0 +1,80 @@
+﻿@model PhotoStudio.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+    ViewBag.Layout = "Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="col-md-12 col-sm-12 header-line text-center bgimage pb-5" style="min-height:70vh">
+    <div class="col-sm-12  col-md-12 mt-5 mb-4">
+        <h2>Welcome to <span >P</span>hoto<span>S</span>todio</h2>
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   
+<div class="col-md-3 col-sm-12 pb-4 form-background">
+    <div class="form-group col-md-12 col-sm-12 p-0" style="text-align:-webkit-center">
+        @*@Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-12" })*@
+        <img src="~/Content/phozogy-master/img/logo.png" alt="" class="mb-4">
+
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control col-md-12 text-center", placeholder = "Username" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12 col-sm-12 p-0" style="text-align:-webkit-center">
+       @* @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12" })*@
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control col-md-12 text-center", placeholder = "Password" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 p-0" style="text-align:-webkit-center">
+        <div class="col-md-12 col-sm-12 mt-2 text-center" >
+            <input type="submit" value="Log in" class="col-12 btn btn-success w-100" />
+        </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12 p-0" style="text-align:-webkit-center">
+        <div class="col-md-12 col-sm-12 text-center">
+                <span style="padding: 10px; background-color: #fff; color: #28a745; font-weight:600">or</span>
+            <hr style="margin-top: -12px; padding: 0px; border-top: 2px solid #28a745;">
+        </div>
+    </div>
+    
+
+    <div class="form-group col-md-12 col-sm-12 mt-3 p-0" style="text-align:-webkit-center">
+        <div class="col-md-12 col-sm-12 mt-4 text-center">
+            <a href="@Url.Action("CreateAccount", "Home")"class="col-12 btn btn-outline-success w-100" >Sign-Up</a>
+            
+        </div>
+    </div>
+
+</div>
+
+   
+</div>
+}
+
+
+<style>
+    
+    .bgimage {
+        background-image: url('../../Images/login-bg.png');
+        background-size:cover;
+    }
+
+</style>
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

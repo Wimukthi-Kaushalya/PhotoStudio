@@ -1,0 +1,104 @@
+﻿@model IEnumerable<PhotoStudio.Data.tbl_Branch>
+
+
+@{
+    ViewBag.Title = "ViewBranch";
+}
+
+
+<div class="col-md-12 col-sm-12 header-line mb-5 header-line text-center bgimage pb-5" style="min-height:70vh ">
+    <div class="col-sm-12  col-md-12 mt-3 mb-4">
+        <h2>Branch Details</h2>
+    </div>
+    @*<p>
+            @Html.ActionLink("Add New Branch", "CreateBranch")
+        </p>*@
+
+    <div class="col-md-10 col-sm-12 row pb-10 form-background pt-4 grid-padding" style="text-align: -webkit-left">
+        <div class="col-12 p-0 mb-3">
+            <a class="btn btn-success pull-right" href="@Url.Action("Add New Branch", "CreateBranch")"><i class="fa fa-plus" aria-hidden="true"></i> Add New Branch</a>
+
+        </div>
+        <div class="col-12 p-0">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.BarnchID)*@
+                        Branch Code
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.BranchName)*@
+                        Branch Name
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ContactNumbe)*@
+                        Branch Contact
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.BranchEmail)*@
+                        Branch Email
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.MangerID)
+                        </th>*@
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="pl-5">
+                            @Html.DisplayFor(modelItem => item.BarnchID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BranchName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContactNumbe)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BranchEmail)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.MangerID)
+                            </td>*@
+                        <td class="text-right">
+                            @*@Html.ActionLink("Edit", "EditBranch", new { BID = item.BarnchID }, new { @class = "Edit-Branch-Link " }) |*@
+                            <button class="btn btn-secondary mr-3" onclick="location.href='@Url.Action("EditBranch", new { BID = item.BarnchID })'"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>|
+                            <button class="btn btn-danger mr-3" onclick="location.href='@Url.Action("Delete_Branch", new { BID = item.BarnchID })'"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+
+
+                            @*@Html.ActionLink("Delete", "FunctionName", new { BID = item.BarnchID }, new { @class = "Edit-Branch-Link" })*@
+
+                            @*<a class="btn btn-secondary mr-3" href="@Url.Action("Edit", "Edit", new {  /*id=item.PrimaryKey */})"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                                |
+                                <a class="btn btn-danger ml-3" href="@Url.Action("Delete", "Delete", new { /* id=item.PrimaryKey */ })"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>*@
+                            @*@Html.ActionLink("Edit", "Edit", new {  /*id=item.PrimaryKey */}) |*@
+                            @* @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                            @*                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+    .bgimage {
+        background-image: url('../../Images/login-bg.png');
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+
+

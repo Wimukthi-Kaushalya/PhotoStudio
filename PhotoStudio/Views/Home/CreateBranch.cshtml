@@ -1,0 +1,162 @@
+﻿@model PhotoStudio.Models.Branch
+
+@{
+    ViewBag.Title = "CreateBranch";
+    ViewBag.Layout = "Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("CreateBranch", "Home"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12 col-sm-12 header-line mb-5 header-line text-center bgimage pb-5" style="min-height:70vh ">
+        <div class="col-sm-12  col-md-12 mt-3 mb-4">
+            <h2>Add New Branch</h2>
+        </div>
+
+        <div class="col-md-4 col-sm-12 row mb-5 form-background" style="text-align: -webkit-left">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="col-md-12 col-sm-12">
+
+                <div class="form-group col-md-12 col-sm-12" style="text-align: -webkit-left">
+                    @*@Html.LabelFor(model => model.BranchName, htmlAttributes: new { @class = "" })*@
+                    <div class="col-md-12 p-0">
+                        Branch Name
+                        @Html.EditorFor(model => model.BranchName, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.BranchName, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12" style="text-align: -webkit-left">
+                    @*@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "" })*@
+                    <div class="col-md-12 p-0">
+                        Branch Address
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12" style="text-align: -webkit-left">
+                    @*@Html.LabelFor(model => model.BranchEmail, htmlAttributes: new { @class = "" })*@
+                    <div class="col-md-12 p-0">
+                        Branch E-mail
+                        @Html.EditorFor(model => model.BranchEmail, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.BranchEmail, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12" style="text-align: -webkit-left">
+                    @*@Html.LabelFor(model => model.ContactNumbe, htmlAttributes: new { @class = "" })*@
+                    <div class="col-md-12 p-0">
+                        Contact No.
+                        @Html.EditorFor(model => model.ContactNumbe, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", required = "required", maxlength = "10" } })
+                        @Html.ValidationMessageFor(model => model.ContactNumbe, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group col-md-12 col-sm-12" style="text-align: -webkit-left">
+                    @*@Html.LabelFor(model => model.MangerID, htmlAttributes: new { @class = "" })*@
+                    <div class="col-md-12 p-0">
+                        Manager
+                        @Html.EditorFor(model => model.MangerID, new { htmlAttributes = new { @class = "form-control col-md-12 p-0", required = "required", type = "number", maxlength = "2" } })
+                        @Html.ValidationMessageFor(model => model.MangerID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group col-md-12 d-flex align-items-end" style="text-align:left">
+                    <div class="p-0 col-md-12 pt-3">
+                        <button type="submit" value="Create" class="btn btn-success w-100 font-25">Create Branch</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+}
+
+
+<script>
+    $(document).ready(function () {
+        debugger
+        $('#passwordInput').on('focus input', function () {
+            debugger
+            var passwordValue = $('#passwordInput').val();
+            var confirmPasswordValue = $('#confirmPasswordInput').val();
+
+            if (passwordValue == confirmPasswordValue) {
+                alert('g')
+            }
+            else {
+                alert('a')
+            }
+        }
+    });
+
+
+</script>
+
+
+<style>
+
+    .bgimage {
+        background-image: url('../../Images/login-bg.png');
+        background-size: cover;
+    }
+</style>
+
+
+
+
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Script to handle the display of the message box -->
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: 'POST',
+            url: '/ControllerName/CreateBranch', // Replace 'ControllerName' with your actual controller name
+            data: { /* Your data here if needed */ },
+            success: function (data) {
+                // Check if the returned data is an error message
+                if (data.includes('error')) {
+                    alert('Error: ' + data);
+                } else {
+                    // Success, redirect to the "ViewBranch" page
+                    window.location.href = '/ControllerName/ViewBranch'; // Replace 'ControllerName' with your actual controller name
+                }
+            },
+            error: function () {
+                // Handle error if needed
+                alert('Error occurred while processing the request.');
+            }
+        });
+    });
+</script>
+
+
+
+
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include jQuery UI library -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+@*<div >
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

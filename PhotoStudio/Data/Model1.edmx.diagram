@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="04d36c77ea0f4e76821b0ba839254d38" Name="Diagram1">
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_Branch" Width="1.5" PointX="5.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_ChargTyperef" Width="1.5" PointX="7" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_customer" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_EmpTypeRef" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_EventType" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_PaymentDetails" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_PaymentMaster" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_ReservationMaster" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_SMSEmailPosting" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_TitleRef" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoStudio_DBModel.tbl_User" Width="1.5" PointX="9.125" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_User_tbl_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_ReservationMaster_tbl_ChargTyperef" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_customer_tbl_TitleRef" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_ReservationMaster_tbl_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_User_tbl_EmpTypeRef" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_ReservationMaster_tbl_EventType" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_PaymentDetails_tbl_PaymentDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoStudio_DBModel.FK_tbl_PaymentMaster_tbl_ReservationMaster" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

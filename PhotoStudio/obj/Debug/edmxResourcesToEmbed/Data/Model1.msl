@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PhotoStudio_DBModelStoreContainer" CdmEntityContainer="PhotoStudio_DBEntities">
+    <EntitySetMapping Name="tbl_Branch">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_Branch">
+        <MappingFragment StoreEntitySet="tbl_Branch">
+          <ScalarProperty Name="BarnchID" ColumnName="BarnchID" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNumbe" ColumnName="ContactNumbe" />
+          <ScalarProperty Name="BranchEmail" ColumnName="BranchEmail" />
+          <ScalarProperty Name="MangerID" ColumnName="MangerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ChargTyperef">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_ChargTyperef">
+        <MappingFragment StoreEntitySet="tbl_ChargTyperef">
+          <ScalarProperty Name="ChargeTypeCode" ColumnName="ChargeTypeCode" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_customer">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_customer">
+        <MappingFragment StoreEntitySet="tbl_customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustometTitle" ColumnName="CustometTitle" />
+          <ScalarProperty Name="CustomerFName" ColumnName="CustomerFName" />
+          <ScalarProperty Name="CustomerLName" ColumnName="CustomerLName" />
+          <ScalarProperty Name="CustomerAddress1" ColumnName="CustomerAddress1" />
+          <ScalarProperty Name="CustomerAddress2" ColumnName="CustomerAddress2" />
+          <ScalarProperty Name="CustomerAddress3" ColumnName="CustomerAddress3" />
+          <ScalarProperty Name="CutomerContact" ColumnName="CutomerContact" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="RegistrerdDate" ColumnName="RegistrerdDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EmpTypeRef">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_EmpTypeRef">
+        <MappingFragment StoreEntitySet="tbl_EmpTypeRef">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EventType">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_EventType">
+        <MappingFragment StoreEntitySet="tbl_EventType">
+          <ScalarProperty Name="EventTypeCode" ColumnName="EventTypeCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PaymentDetails">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_PaymentDetails">
+        <MappingFragment StoreEntitySet="tbl_PaymentDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="TxnDate" ColumnName="TxnDate" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="PaymentCategory" ColumnName="PaymentCategory" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PaymentMaster">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_PaymentMaster">
+        <MappingFragment StoreEntitySet="tbl_PaymentMaster">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="ReservationId" ColumnName="ReservationId" />
+          <ScalarProperty Name="ReservationDate" ColumnName="ReservationDate" />
+          <ScalarProperty Name="FullAmount" ColumnName="FullAmount" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="Settle" ColumnName="Settle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ReservationMaster">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_ReservationMaster">
+        <MappingFragment StoreEntitySet="tbl_ReservationMaster">
+          <ScalarProperty Name="ReservationId" ColumnName="ReservationId" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="EvenType" ColumnName="EvenType" />
+          <ScalarProperty Name="FunctionType" ColumnName="FunctionType" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="IsPayCompleate" ColumnName="IsPayCompleate" />
+          <ScalarProperty Name="IsReservationCompleate" ColumnName="IsReservationCompleate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SMSEmailPosting">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_SMSEmailPosting">
+        <MappingFragment StoreEntitySet="tbl_SMSEmailPosting">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="Isposted" ColumnName="Isposted" />
+          <ScalarProperty Name="PostedTime" ColumnName="PostedTime" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TitleRef">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_TitleRef">
+        <MappingFragment StoreEntitySet="tbl_TitleRef">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CIFRef" ColumnName="CIFRef" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_User">
+      <EntityTypeMapping TypeName="PhotoStudio_DBModel.tbl_User">
+        <MappingFragment StoreEntitySet="tbl_User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNum" ColumnName="ContactNum" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="BrachID" ColumnName="BrachID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Pro_Create_NewCustomer" FunctionName="PhotoStudio_DBModel.Store.Pro_Create_NewCustomer" />
+    <FunctionImportMapping FunctionImportName="Pro_Create_NewUser" FunctionName="PhotoStudio_DBModel.Store.Pro_Create_NewUser" />
+    <FunctionImportMapping FunctionImportName="Pro_Delete_UserDetails" FunctionName="PhotoStudio_DBModel.Store.Pro_Delete_UserDetails" />
+    <FunctionImportMapping FunctionImportName="Pro_Update_CustomerDetails" FunctionName="PhotoStudio_DBModel.Store.Pro_Update_CustomerDetails" />
+    <FunctionImportMapping FunctionImportName="Pro_Update_UserDetails" FunctionName="PhotoStudio_DBModel.Store.Pro_Update_UserDetails" />
+    <FunctionImportMapping FunctionImportName="Pro_View_CustomerDetails" FunctionName="PhotoStudio_DBModel.Store.Pro_View_CustomerDetails" />
+    <FunctionImportMapping FunctionImportName="Pro_View_UserDetails" FunctionName="PhotoStudio_DBModel.Store.Pro_View_UserDetails" />
+    <FunctionImportMapping FunctionImportName="repo_View_CustomerDetails" FunctionName="PhotoStudio_DBModel.Store.repo_View_CustomerDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PhotoStudio_DBModel.repo_View_CustomerDetails_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustometTitle" ColumnName="CustometTitle" />
+          <ScalarProperty Name="CustomerFName" ColumnName="CustomerFName" />
+          <ScalarProperty Name="CustomerLName" ColumnName="CustomerLName" />
+          <ScalarProperty Name="CustomerAddress1" ColumnName="CustomerAddress1" />
+          <ScalarProperty Name="CustomerAddress2" ColumnName="CustomerAddress2" />
+          <ScalarProperty Name="CustomerAddress3" ColumnName="CustomerAddress3" />
+          <ScalarProperty Name="CutomerContact" ColumnName="CutomerContact" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="RegistrerdDate" ColumnName="RegistrerdDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="repo_View_UserDetails" FunctionName="PhotoStudio_DBModel.Store.repo_View_UserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PhotoStudio_DBModel.repo_View_UserDetails_Result">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNum" ColumnName="ContactNum" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="BrachID" ColumnName="BrachID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="PhotoStudio_DBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="PhotoStudio_DBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="PhotoStudio_DBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="PhotoStudio_DBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PhotoStudio_DBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="PhotoStudio_DBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PhotoStudio_DBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PhotoStudio_DBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="PhotoStudio_DBModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="Pro_CreateNewBranch" FunctionName="PhotoStudio_DBModel.Store.Pro_CreateNewBranch" />
+    <FunctionImportMapping FunctionImportName="Pro_CreateNewUser" FunctionName="PhotoStudio_DBModel.Store.Pro_CreateNewUser" />
+  </EntityContainerMapping>
+</Mapping>

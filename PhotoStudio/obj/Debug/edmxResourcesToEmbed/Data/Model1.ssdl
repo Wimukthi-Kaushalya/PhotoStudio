@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhotoStudio_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Branch">
+    <Key>
+      <PropertyRef Name="BarnchID" />
+    </Key>
+    <Property Name="BarnchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BranchName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="250" />
+    <Property Name="ContactNumbe" Type="varchar" MaxLength="50" />
+    <Property Name="BranchEmail" Type="varchar" MaxLength="50" />
+    <Property Name="MangerID" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_ChargTyperef">
+    <Key>
+      <PropertyRef Name="ChargeTypeCode" />
+    </Key>
+    <Property Name="ChargeTypeCode" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="Discription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventType" Type="char" MaxLength="2" />
+    <Property Name="Price" Type="money" />
+  </EntityType>
+  <EntityType Name="tbl_customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustometTitle" Type="char" MaxLength="2" />
+    <Property Name="CustomerFName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerLName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerAddress1" Type="varchar" MaxLength="150" />
+    <Property Name="CustomerAddress2" Type="varchar" MaxLength="150" />
+    <Property Name="CustomerAddress3" Type="varchar" MaxLength="150" />
+    <Property Name="CutomerContact" Type="nchar" MaxLength="13" />
+    <Property Name="CustomerEmail" Type="nchar" MaxLength="50" />
+    <Property Name="RegistrerdDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tbl_EmpTypeRef">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_EventType">
+    <Key>
+      <PropertyRef Name="EventTypeCode" />
+    </Key>
+    <Property Name="EventTypeCode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_PaymentDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentId" Type="int" />
+    <Property Name="TxnDate" Type="date" />
+    <Property Name="PaymentMode" Type="char" MaxLength="10" />
+    <Property Name="PaymentCategory" Type="char" MaxLength="2" />
+    <Property Name="Amount" Type="money" />
+  </EntityType>
+  <EntityType Name="tbl_PaymentMaster">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="ReservationId" Type="int" Nullable="false" />
+    <Property Name="ReservationDate" Type="date" />
+    <Property Name="FullAmount" Type="money" />
+    <Property Name="AdvanceAmount" Type="money" />
+    <Property Name="Settle" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_ReservationMaster">
+    <Key>
+      <PropertyRef Name="ReservationId" />
+    </Key>
+    <Property Name="ReservationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="EvenType" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="FunctionType" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="FromTime" Type="datetime" />
+    <Property Name="ToTime" Type="datetime" />
+    <Property Name="IsPayCompleate" Type="bit" />
+    <Property Name="IsReservationCompleate" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_SMSEmailPosting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="RefNo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="ReceivedDate" Type="datetime" Nullable="false" />
+    <Property Name="Isposted" Type="bit" Nullable="false" />
+    <Property Name="PostedTime" Type="datetime" />
+    <Property Name="Narration" Type="varchar" MaxLength="5" />
+    <Property Name="ResponseCode" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_TitleRef">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="1" />
+    <Property Name="CIFRef" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="tbl_User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="ContactNum" Type="nchar" MaxLength="13" />
+    <Property Name="EmailAddress" Type="nchar" MaxLength="100" />
+    <Property Name="Password" Type="nchar" MaxLength="10" />
+    <Property Name="UserType" Type="char" MaxLength="2" />
+    <Property Name="BrachID" Type="int" />
+  </EntityType>
+  <Association Name="FK_tbl_customer_tbl_TitleRef">
+    <End Role="tbl_TitleRef" Type="Self.tbl_TitleRef" Multiplicity="0..1" />
+    <End Role="tbl_customer" Type="Self.tbl_customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_TitleRef">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_customer">
+        <PropertyRef Name="CustometTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PaymentDetails_tbl_PaymentDetails">
+    <End Role="tbl_PaymentMaster" Type="Self.tbl_PaymentMaster" Multiplicity="0..1" />
+    <End Role="tbl_PaymentDetails" Type="Self.tbl_PaymentDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PaymentMaster">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="tbl_PaymentDetails">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PaymentMaster_tbl_ReservationMaster">
+    <End Role="tbl_ReservationMaster" Type="Self.tbl_ReservationMaster" Multiplicity="1" />
+    <End Role="tbl_PaymentMaster" Type="Self.tbl_PaymentMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ReservationMaster">
+        <PropertyRef Name="ReservationId" />
+      </Principal>
+      <Dependent Role="tbl_PaymentMaster">
+        <PropertyRef Name="ReservationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ReservationMaster_tbl_ChargTyperef">
+    <End Role="tbl_ChargTyperef" Type="Self.tbl_ChargTyperef" Multiplicity="1" />
+    <End Role="tbl_ReservationMaster" Type="Self.tbl_ReservationMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ChargTyperef">
+        <PropertyRef Name="ChargeTypeCode" />
+      </Principal>
+      <Dependent Role="tbl_ReservationMaster">
+        <PropertyRef Name="FunctionType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ReservationMaster_tbl_customer">
+    <End Role="tbl_customer" Type="Self.tbl_customer" Multiplicity="1" />
+    <End Role="tbl_ReservationMaster" Type="Self.tbl_ReservationMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tbl_ReservationMaster">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ReservationMaster_tbl_EventType">
+    <End Role="tbl_EventType" Type="Self.tbl_EventType" Multiplicity="1" />
+    <End Role="tbl_ReservationMaster" Type="Self.tbl_ReservationMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_EventType">
+        <PropertyRef Name="EventTypeCode" />
+      </Principal>
+      <Dependent Role="tbl_ReservationMaster">
+        <PropertyRef Name="EvenType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_User_tbl_Branch">
+    <End Role="tbl_Branch" Type="Self.tbl_Branch" Multiplicity="0..1" />
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Branch">
+        <PropertyRef Name="BarnchID" />
+      </Principal>
+      <Dependent Role="tbl_User">
+        <PropertyRef Name="BrachID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_User_tbl_EmpTypeRef">
+    <End Role="tbl_EmpTypeRef" Type="Self.tbl_EmpTypeRef" Multiplicity="0..1" />
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_EmpTypeRef">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_User">
+        <PropertyRef Name="UserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="Pro_Create_NewCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Pro_Create_NewUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Pro_CreateNewBranch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BranchName" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="ContactNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Manager" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pro_CreateNewUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="nchar" Mode="In" />
+    <Parameter Name="LastName" Type="nchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="ContactNumber" Type="nchar" Mode="In" />
+    <Parameter Name="Email" Type="nchar" Mode="In" />
+    <Parameter Name="Password" Type="nchar" Mode="In" />
+    <Parameter Name="UserType" Type="char" Mode="In" />
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pro_Delete_UserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Pro_Update_CustomerDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Pro_Update_UserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Pro_View_CustomerDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Pro_View_UserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="repo_View_CustomerDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="repo_View_UserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="nchar" Mode="In" />
+    <Parameter Name="LastNameame" Type="nchar" Mode="In" />
+    <Parameter Name="ContactNumber" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="PhotoStudio_DBModelStoreContainer">
+    <EntitySet Name="tbl_Branch" EntityType="Self.tbl_Branch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ChargTyperef" EntityType="Self.tbl_ChargTyperef" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_customer" EntityType="Self.tbl_customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EmpTypeRef" EntityType="Self.tbl_EmpTypeRef" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EventType" EntityType="Self.tbl_EventType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PaymentDetails" EntityType="Self.tbl_PaymentDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PaymentMaster" EntityType="Self.tbl_PaymentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ReservationMaster" EntityType="Self.tbl_ReservationMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SMSEmailPosting" EntityType="Self.tbl_SMSEmailPosting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TitleRef" EntityType="Self.tbl_TitleRef" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_User" EntityType="Self.tbl_User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_customer_tbl_TitleRef" Association="Self.FK_tbl_customer_tbl_TitleRef">
+      <End Role="tbl_TitleRef" EntitySet="tbl_TitleRef" />
+      <End Role="tbl_customer" EntitySet="tbl_customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PaymentDetails_tbl_PaymentDetails" Association="Self.FK_tbl_PaymentDetails_tbl_PaymentDetails">
+      <End Role="tbl_PaymentMaster" EntitySet="tbl_PaymentMaster" />
+      <End Role="tbl_PaymentDetails" EntitySet="tbl_PaymentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PaymentMaster_tbl_ReservationMaster" Association="Self.FK_tbl_PaymentMaster_tbl_ReservationMaster">
+      <End Role="tbl_ReservationMaster" EntitySet="tbl_ReservationMaster" />
+      <End Role="tbl_PaymentMaster" EntitySet="tbl_PaymentMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ReservationMaster_tbl_ChargTyperef" Association="Self.FK_tbl_ReservationMaster_tbl_ChargTyperef">
+      <End Role="tbl_ChargTyperef" EntitySet="tbl_ChargTyperef" />
+      <End Role="tbl_ReservationMaster" EntitySet="tbl_ReservationMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ReservationMaster_tbl_customer" Association="Self.FK_tbl_ReservationMaster_tbl_customer">
+      <End Role="tbl_customer" EntitySet="tbl_customer" />
+      <End Role="tbl_ReservationMaster" EntitySet="tbl_ReservationMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ReservationMaster_tbl_EventType" Association="Self.FK_tbl_ReservationMaster_tbl_EventType">
+      <End Role="tbl_EventType" EntitySet="tbl_EventType" />
+      <End Role="tbl_ReservationMaster" EntitySet="tbl_ReservationMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_User_tbl_Branch" Association="Self.FK_tbl_User_tbl_Branch">
+      <End Role="tbl_Branch" EntitySet="tbl_Branch" />
+      <End Role="tbl_User" EntitySet="tbl_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_User_tbl_EmpTypeRef" Association="Self.FK_tbl_User_tbl_EmpTypeRef">
+      <End Role="tbl_EmpTypeRef" EntitySet="tbl_EmpTypeRef" />
+      <End Role="tbl_User" EntitySet="tbl_User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
